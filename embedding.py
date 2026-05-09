@@ -3,8 +3,8 @@ import requests
 
 url = "http://localhost:11434/api/embed"
 
-list_of_pets = ["dog", "cat", "hamster", "rabbit", "parrot", "goldfish", "turtle", "ferret", "guinea pig", "chinchilla"]
-list_of_wild_animals = ["lion", "tiger", "bear", "elephant", "giraffe", "zebra", "monkey", "panda", "koala", "kangaroo"]
+list_of_pets = ["dog", "cat", "hamster", "rabbit", "parrot", "goldfish", "turtle", "ferret", "guinea pig", "chinchilla", "hedgehog", "sugar glider", "tarantula", "snake", "lizard", "frog", "newt", "axolotl", "hermit crab", "ant farm"]
+list_of_wild_animals = ["lion", "tiger", "bear", "elephant", "giraffe", "zebra", "monkey", "panda", "koala", "kangaroo", "hippopotamus", "rhinoceros", "crocodile", "alligator", "leopard", "cheetah", "wolf", "fox", "deer", "moose"]
 
 def embed_text(text, dimensions=1024):
     data = {
@@ -17,7 +17,7 @@ def embed_text(text, dimensions=1024):
 
     print("response status code: ", response.status_code)
     if response.status_code == 200:
-        return len(response.json()['embeddings'][0])
+        return response.json()['embeddings'][0]
     else:
         return "Error:", text, response.status_code
 

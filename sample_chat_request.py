@@ -25,9 +25,9 @@ def stream_response(user_input=""):
     
         print("Ai:", response)
 
-
-while True:
-    user_input = input("User: ")
-    if user_input.lower() == "exit":
-        break
-    stream_response(user_input=user_input)
+if __name__ == "__main__":
+    while True:
+        user_input = input("User: ")
+        if user_input.lower() == "exit":
+            break
+        stream_response(user_input=user_input)
